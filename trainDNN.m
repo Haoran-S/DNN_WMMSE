@@ -16,13 +16,13 @@ function trainDNN(K,num_H)
 ENCODE1=2*K;
 neurons=2*K;
 load(sprintf('Gussian_%d_%d.mat',num_H, K));
-if num_H>10000
-    xTrain=X(:,1:10000);
-    tTrain=Y(:,1:10000);
-else
+% if num_H>10000
+%     xTrain=X(:,1:10000);
+%     tTrain=Y(:,1:10000);
+% else
     xTrain=X;
     tTrain=Y;
-end
+% end
 
 var_noise=1;
 fprintf('1st layer neurons = %d, 2nd layer neurons = %d, Training samples = %d\n',ENCODE1,neurons, num_H);
@@ -50,9 +50,9 @@ deepnet.divideParam.testRatio=0/100;
 deepnet.trainParam.max_fail=25;
 deepnet.trainParam.epochs=1000;
 deepnet = train(deepnet,xTrain,tTrain);
-xTrain=X;
-tTrain=Y;
-deepnet = train(deepnet,xTrain,tTrain);
+% xTrain=X;
+% tTrain=Y;
+% deepnet = train(deepnet,xTrain,tTrain);
 genFunction(deepnet,sprintf('Gussianfit_%d_%d_%d_%d',K,num_H,ENCODE1,neurons));
 time=toc;
 fprintf('training time = %.2f s\n',time);
