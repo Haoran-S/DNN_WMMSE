@@ -1,5 +1,7 @@
 # DNN_WMMSE
 
+[Update]: This code is outdated, please refer to our Python version:  https://github.com/Haoran-S/SPAWC2017.
+
 MATLAB code to reproduce our works on DNN research.
 
 Simply run "main.m", you will get the result for Gaussian IC case.
